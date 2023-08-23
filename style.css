@@ -1,15 +1,17 @@
+:root {
+}
 .navbar {
   background: #046553;
   border-radius: 0px 0px 20px 20px;
   box-shadow: 0px 8px 20px 10px rgba(0, 0, 0, 0.25);
 }
+
 .navbar-brand {
   filter: drop-shadow(4px 4px 4px #413d3da4);
 }
 .navbar-dropshadow {
   color: #ecdcdc;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
