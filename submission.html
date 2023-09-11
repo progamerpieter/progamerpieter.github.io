@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- css -->
+    <link rel="stylesheet" href="css/submit.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <!-- add bootstrap -->
     <link
@@ -20,7 +21,7 @@
     <!-- meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Progamerpieter</title>
+    <title>submitted</title>
   </head>
   <body>
     <!-- navbar -->
@@ -69,57 +70,6 @@
       </nav>
     </header>
     <!-- rest of body -->
-    <script>
-      var submitted = false;
-    </script>
-    <iframe
-      name="hiddenConfirm"
-      id="hiddenConfirm"
-      style="display: none"
-      onload="if(submitted){window.location='submission.html';}"
-    ></iframe>
-    <form
-      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfRwDZxLLXDuRfBd84TdK3Xro-f92cAMvqXiy6ammuMy3LvJw/formResponse"
-      method="post"
-      target="hiddenConfirm"
-      onsubmit="submitted=true"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h1>Contact</h1>
-            <div class="row">
-              <div class="col">
-                <input
-                  required
-                  name="entry.2005620554"
-                  type="text"
-                  class="form-control"
-                  placeholder="First name"
-                  aria-label="First name"
-                />
-              </div>
-              <div class="col">
-                <input
-                  required
-                  name="entry.1035776649"
-                  type="text"
-                  class="form-control"
-                  placeholder="Last name"
-                  aria-label="Last name"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <button target="_blank" type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
+    <h1 class=h1>form submitted</h1>
   </body>
 </html>
