@@ -3,6 +3,7 @@
   <head>
     <!-- css -->
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <!-- add bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -79,6 +80,7 @@
       onload="if(submitted){window.location='submission.html';}"
     ></iframe>
     <form
+      class="form"
       action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfRwDZxLLXDuRfBd84TdK3Xro-f92cAMvqXiy6ammuMy3LvJw/formResponse"
       method="post"
       target="hiddenConfirm"
@@ -89,55 +91,54 @@
           <div class="col-12">
             <h1>Contact</h1>
             <div class="row">
-              <div class="col">
+              <div class="col-12 col-sm-6">
                 <input
                   required
                   name="entry.2005620554"
                   type="text"
-                  class="form-control"
+                  class="form-control form"
                   placeholder="First name"
                   aria-label="First name"
                 />
               </div>
-              <div class="col">
+              <div class="col-12 col-sm-6">
                 <input
                   required
                   name="entry.1035776649"
                   type="text"
-                  class="form-control"
+                  class="form-control form"
                   placeholder="Last name"
                   aria-label="Last name"
                 />
               </div>
             </div>
-            <div class="row">
-              <div class="col-6">
-                <input
-                  name="entry.123859892"
-                  required
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
+
+            <div class="col-12">
+              <input
+                name="entry.123859892"
+                required
+                type="email"
+                class="form-control form"
+                id="exampleFormControlInput1"
+                placeholder="e-mail"
+              />
             </div>
-            <div class="row">
-              <div class="col-12">
-                <textarea
-                  name="entry.3142086"
-                  required
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></textarea>
-              </div>
+
+            <div class="col-12">
+              <textarea
+                name="entry.3142086"
+                required
+                class="form-control form"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                placeholder="text"
+              ></textarea>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <button target="_blank" type="submit" class="btn btn-primary">
+            <button target="_blank" type="submit" class="btn btn-primary form">
               Submit
             </button>
           </div>
