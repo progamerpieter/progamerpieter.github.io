@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-NBQQ9BX5N7"
@@ -15,8 +15,22 @@
 
       gtag("config", "G-NBQQ9BX5N7");
     </script>
-    <!-- css -->
-    <link rel="stylesheet" href="css/navbar.css" />
+    <!-- Clarity tracking code for https://progamerpieter.github.io/ -->
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "iw7t2k9zl9");
+    </script>
+
     <!-- add bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -24,27 +38,38 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- google search console -->
+    <meta
+      name="google-site-verification"
+      content="OqwqTWNK_NiReEqNsDJaq6pwS8yJvpHKoImnnes9CgI"
+    />
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
     <!-- meta -->
-    <meta name="title" content="Socials | Progamerpieter" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Progamerpieter</title>
+    <meta name="title" content="Home | Progamerpieter" />
     <meta
       name="description"
-      content="on this page you can find the link to all my socials"
+      content="Welcome on the second website of progamerpieter. this website is used for development of my website and for testing."
     />
-    <meta
-      name="keywords"
-      content="progamerpieter, socials, media, tiktok, youtube, instagram, "
-    />
+    <meta name="keywords" content="Progamerpieter, home, homepage" />
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="1 days" />
     <meta name="author" content="pieter" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>socials | Progamerpieter</title>
   </head>
+
   <body>
     <!-- navbar -->
     <header>
@@ -70,15 +95,12 @@
           >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="socials.html"
-                  >socials</a
-                >
+                <a class="nav-link" href="socials.html">socials</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="portfolio.html">portfolio</a>
@@ -91,17 +113,17 @@
         </div>
       </nav>
     </header>
-    <!-- rest of body -->
+    <!--rest of body-->
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <h1>Socials</h1>
+        <div class="col-6">
+          <h1 class="display-4">socials</h1>
         </div>
       </div>
       <div class="row">
-        <div class="col-4">test</div>
-        <div class="col-4">test</div>
-        <div class="col-4">test</div>
+        <div class="col-4"><a href="https://www.tiktok.com/"><button class="btn btn-primary">hello</button></a></div>
+        <div class="col-4"><a href=""><button class="btn btn-primary">hello</button></a></div>
+        <div class="col-4"><a href=""><button class="btn btn-primary">hello</button></a></div>
       </div>
     </div>
   </body>
