@@ -13,14 +13,9 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://progamerpieter.github.io/index.html</loc>
-  <lastmod>2023-09-16T20:21:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://progamerpieter.github.io/socials.html</loc>
   <lastmod>2023-09-16T20:21:52+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://progamerpieter.github.io/portfolio.html</loc>
@@ -35,12 +30,12 @@
 <url>
   <loc>https://progamerpieter.github.io/Game.html</loc>
   <lastmod>2023-09-16T20:21:52+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://progamerpieter.github.io/editing.html</loc>
   <lastmod>2023-09-16T20:21:52+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.60</priority>
 </url>
 
 
