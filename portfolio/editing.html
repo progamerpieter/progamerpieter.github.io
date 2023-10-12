@@ -2,28 +2,32 @@
 <html lang="en">
   <head>
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org/", 
-  "@type": "BreadcrumbList", 
-  "itemListElement": [{
-    "@type": "ListItem", 
-    "position": 1, 
-    "name": "Progamerpieter.github.io",
-    "item": "https://progamerpieter.github.io/"  
-  },{
-    "@type": "ListItem", 
-    "position": 2, 
-    "name": "Portfolio",
-    "item": "https://progamerpieter.github.io/portfolio.html"  
-  },{
-    "@type": "ListItem", 
-    "position": 3, 
-    "name": "Video editing",
-    "item": "https://progamerpieter.github.io/portfolio/editing.html"  
-  }]
-}
-</script>
-     <!-- Google tag (gtag.js) -->
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Progamerpieter.github.io",
+            "item": "https://progamerpieter.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio",
+            "item": "https://progamerpieter.github.io/portfolio.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Video editing",
+            "item": "https://progamerpieter.github.io/portfolio/editing.html"
+          }
+        ]
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-NBQQ9BX5N7"
@@ -44,8 +48,16 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <!-- google fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/game.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
     <!-- meta -->
     <meta name="title" content="Editing | Progamerpieter" />
     <meta
@@ -66,5 +78,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video editing | Progamerpieter</title>
   </head>
-  <body></body>
+  <body>
+    <!-- navbar -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark nav-dropshadow">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html"
+            ><img src="../images/Logo-transparent.png" alt="logo" width="62,5"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse navbar-dropshadow"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../socials.html">socials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../portfolio.html">portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../contact.html">contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--rest of body-->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="../portfolio.html">
+            <span class="arrow material-symbols-outlined"> arrow_back </span>
+          </a>
+          <h1>this page is about video editing</h1>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
