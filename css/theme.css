@@ -18,3 +18,7 @@
     --Navbar: #046553;
   }
 }
+
+body {
+  background-color: var(--Background);
+}

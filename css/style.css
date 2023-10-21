@@ -1,3 +1,7 @@
-.primary{
-    color: var(--Primary)
+#btn-primary {
+  background-color: var(--Primary);
+  color: var(--Text);
+}
+h2 {
+color: var(--Text);
 }
