@@ -1,10 +1,4 @@
-#btn-primary {
-  background-color: var(--Primary);
-  color: var(--Text);
-}
-#btn-primary:hover {
-  background-color: var(--H_primary);
-}
+
 h2 {
 color: var(--Text);
 }
