@@ -1,0 +1,38 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    /*Normal*/
+    --Text: rgb(15, 16, 16);
+    --Background: rgb(229, 237, 230);
+    --Primary: rgb(17, 72, 63);
+    --Secondary: rgb(13, 77, 98);
+    --Accent: rgb(23, 179, 135);
+    --Navbar: #046553;
+    /*Hover*/
+    --H_Text: rgb(15, 16, 16);
+    --H_Background: rgb(229, 237, 230);
+    --H_Primary: rgb(17, 72, 63);
+    --H_Secondary: rgb(13, 77, 98);
+    --H_Accent: rgb(23, 179, 135);
+    --H_Navbar: #046553;
+    
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /*Normal*/
+    --Text: rgb(239, 240, 240);
+    --Background: rgb(19, 27, 20);
+    --Primary: rgb(17, 72, 63);
+    --Secondary: rgb(156, 220, 242);
+    --Accent: rgb(74, 232, 187);
+    --Navbar: #046553;
+     /*Hover*/
+    --H_Text: rgb(15, 16, 16);
+    --H_Background: rgb(229, 237, 230);
+    --H_Primary: rgb(17, 72, 63);
+    --H_Secondary: rgb(13, 77, 98);
+    --H_Accent: rgb(23, 179, 135);
+    --H_Navbar: #046553;
+  }
+}
+
