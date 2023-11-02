@@ -124,6 +124,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/theme.css" />
+    <!-- javascript -->
+    <script src="/javascript/theme.js" defer></script>
     <!-- meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -142,7 +144,7 @@
     <meta name="copyright" content="progamerpieter" />
   </head>
 
-  <body data-bs-theme="light">
+  <body data-bs-theme="light" id="body">
     <!-- modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -155,8 +157,8 @@
         secect if you want to switch theme
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Dark theme</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">light theme</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="Darkmode()">Dark theme</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="Lightmode()">light theme</button>
       </div>
     </div>
   </div>
