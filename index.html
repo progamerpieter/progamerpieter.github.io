@@ -142,7 +142,25 @@
     <meta name="copyright" content="progamerpieter" />
   </head>
 
-  <body>
+  <body data-bs-theme="light">
+    <!-- modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Theme</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        secect if you want to switch theme
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Dark theme</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">light theme</button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- navbar -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark nav-dropshadow">
@@ -180,6 +198,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">contact</a>
               </li>
+              <!-- modal trigger -->
+              <li>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">theme</button>
+              </li>
+              <!-- end modal trigger -->
             </ul>
           </div>
         </div>
