@@ -1,3 +1,4 @@
+
 @media (prefers-color-scheme: light) {
   :root {
     /*Normal*/
@@ -36,3 +37,6 @@
   }
 }
 
+.arrow-color{
+color: var(--bs-heading-color);
+};
