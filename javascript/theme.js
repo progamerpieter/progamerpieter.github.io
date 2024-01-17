@@ -8,25 +8,18 @@ if (sessionStorage.getItem("Theme") === "Dark") {
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
-      return "Dark";
+      Darkmode();
     } else if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: light)").matches
     ) {
-      return "light";
+      Lightmode();
     } else {
-      return "unknown";
+      Lightmode();
     }
   }
 }
-// Example usage:
-let colorMode = checkColorMode();
 
-if (colorMode == "Dark") {
-  Darkmode();
-} else if (colorMode == "Light") {
-  Lightmode();
-}
 
 function Darkmode() {
   document.querySelector("#body").setAttribute("data-bs-theme", "dark");
