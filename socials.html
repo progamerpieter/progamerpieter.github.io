@@ -41,6 +41,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- add bootstrap -->
     <link rel="stylesheet" href="../css/main.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- AOS -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- google search console -->
     <meta
       name="google-site-verification"
@@ -136,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="row">
         <div class="col-6">
           <h1 class="visually-hidden">on this page you can find all the links to my socials</h1>
-          <h2 class="display-4">socials</h2>
+          <h2 data-aos-delay="0" data-aos="fade-down" class="display-4">socials</h2>
         </div>
       </div>
       <div class="row mb-3">
@@ -145,18 +147,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a
             target="_blank"
             href="https://www.youtube.com/channel/UCe4Sp23A27hAYrJX56xxdKw"
-            ><button class="btn btn-primary shadow">Youtube</button></a
+            ><button data-aos-delay="50" data-aos="fade-right" class="btn btn-primary">Youtube</button></a
           >
         </div>
         <div class="col-4">
           <a target="_blank" href="https://www.tiktok.com/@progamerpieter"
-            ><button class="btn btn-primary">Tiktok</button></a
+            ><button data-aos-delay="100" data-aos="fade-right" class="btn btn-primary">Tiktok</button></a
           >
         </div>
         <div class="col-4">
          
           <a target="_blank" href="https://www.instagram.com/progamerpieter/"
-            ><button class="btn btn-primary">Instagram</button></a
+            ><button data-aos-delay="150" data-aos="fade-right" class="btn btn-primary">Instagram</button></a
           >
         </div>
         
@@ -165,18 +167,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="col-4">
   
           <a target="_blank" href="https://twitter.com/progamerpieter"
-            ><button class="btn btn-primary">Twitter</button></a
+            ><button data-aos-delay="200" data-aos="fade-right" class="btn btn-primary">Twitter</button></a
           >
         </div>
         <div class="col-4">
           <a target="_blank" href="https://www.twitch.tv/progamerpieter"
-            ><button class="btn btn-primary">Twitch</button></a
+            ><button data-aos-delay="250" data-aos="fade-right" class="btn btn-primary">Twitch</button></a
           >
         </div>
         <div class="col-4">
           
           <a target="_blank" href="https://www.facebook.com/profile.php?id=61552521119877"
-            ><button class="btn btn-primary">Facebook</button></a
+            ><button data-aos-delay="300" data-aos="fade-right" class="btn btn-primary">Facebook</button></a
           >
         </div>
         </div>
@@ -187,5 +189,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
     </div>
+    <!-- AOS-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- end AOS -->
   </body>
 </html>
