@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- rive -->
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -126,10 +128,15 @@
               <li class="nav-item ">
                 <a  class="nav-link" href="services.html">services</a>
               </li>
+              
             </ul>
           </div>
         </div>
       </nav>
+
+     
+    
+      
     </header>
     <!--rest of body-->
     <h1 class="visually-hidden">
@@ -138,7 +145,7 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-          <img  data-aos-delay="50" data-aos="fade-down"  src="images/download.png" alt="" />
+          <canvas data-aos-delay="50" data-aos="fade-down" id="canvas" width="240" height="210"></canvas>
           <h3 data-aos-delay="100" data-aos="fade-down">Camera</h3>
           <p data-aos-delay="150" data-aos="fade-down">On this page you can see what i have filmed</p>
           <a href="portfolio/camera.html"
@@ -161,11 +168,29 @@
         </div>
       </div>
     </div>
+    <script>
+      const r = new rive.Rive({
+  src: "../images/rive/Camera.riv",
+  // OR the path to a discoverable and public Rive asset
+  // src: '/public/example.riv',
+  canvas: document.getElementById("canvas"),
+  autoplay: true,
+  stateMachines: "Camera",
+  onLoad: () => {
+    r.resizeDrawingSurfaceToCanvas();
+    
+  },
+  
+});
+
+    </script>
     <!-- AOS-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
   <!-- end AOS -->
+  
+ 
   </body>
 </html>
