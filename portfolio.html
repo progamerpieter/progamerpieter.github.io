@@ -146,7 +146,9 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-          <img data-aos-delay="50" data-aos="fade-down" src="/images/portfolio/Camera.svg" class="img-fluid"/>
+          <canvas style="width: 500px" width="500px" id="canvas"></canvas>
+
+
           <h3 data-aos-delay="100" data-aos="fade-down" class="inter-700">Camera</h3>
           <p data-aos-delay="150" data-aos="fade-down" class="inter-400">On this page you can see what i have filmed</p>
           <a href="portfolio/camera.html"
@@ -172,8 +174,6 @@
     <script>
       const r = new rive.Rive({
   src: "../images/rive/Camera.riv",
-  // OR the path to a discoverable and public Rive asset
-  // src: '/public/example.riv',
   canvas: document.getElementById("canvas"),
   autoplay: true,
   stateMachines: "Camera",
@@ -181,7 +181,7 @@
     r.resizeDrawingSurfaceToCanvas();
     
   },
-  
+  layout: new rive.Layout({fit: 'contain', alignment: 'centerLeft'}),
 });
 
     </script>
