@@ -2,3 +2,11 @@ $primary: #156C46;
 
 // impory bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+// Create your own map
+$custom-colors: (
+  "box-color": rgb(218, 206, 39)
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
