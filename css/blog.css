@@ -1,10 +1,9 @@
 img {
-  
+  border-radius: 10px;
     transition: 0.3s ease-in-out;
 }
 
 img:hover {
   opacity: 0.8;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+ 
 }
