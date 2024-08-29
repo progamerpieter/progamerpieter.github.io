@@ -72,6 +72,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>404 | Progamerpieter</title>
   </head>
   <body data-bs-theme="dark" id="body">
+    <!-- Text selection color -->
+     <style>
+      ::selection{
+        background-color: #067e5a;
+        color: rgb(10, 10, 10);
+      }
+     </style>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45GZV2B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -123,5 +130,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     <!-- rest of body -->
     <h1  style="text-align: center"><strong class="fw-semibold">page not found</strong></h1>
+    <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+      <canvas  id="canvas"></canvas>
+    </div>
+<script src="https://unpkg.com/@rive-app/canvas"></script>
+<script>
+  // autoplays the first animation in the default artboard
+  new rive.Rive({
+    src: '../images/rive/404.riv',
+    canvas: document.getElementById('canvas'),
+    autoplay: true,
+    layout: new rive.Layout({fit: 'cover', alignment: 'center'}),
+  })
+</script>
   </body>
 </html>
