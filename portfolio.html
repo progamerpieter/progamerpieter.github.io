@@ -188,6 +188,7 @@
         <a href="../Over.html"><button class="btn btn-primary">Over mij</button></a>
         
       </div>
+      <canvas data-aos-delay="250" data-aos="fade-down" style="width: 1500px" width="1500px" id="Lamp"></canvas>
     </div>
     <script>
       const r = new rive.Rive({
@@ -201,6 +202,7 @@
   },
   layout: new rive.Layout({fit: 'contain', alignment: 'centerLeft'}),
 });
+
   const editing = new rive.Rive({
   src: "../images/rive/editing.riv",
   canvas: document.getElementById("editing"),
@@ -212,6 +214,18 @@
   },
   layout: new rive.Layout({fit: 'contain', alignment: 'centerLeft'}),
 });
+const Lamp = new rive.Rive({
+  src: "../images/rive/Lamp.riv",
+  canvas: document.getElementById("Lamp"),
+  autoplay: true,
+  stateMachines: "State Machine 1",
+  onLoad: () => {
+    r.resizeDrawingSurfaceToCanvas();
+    
+  }, 
+  layout: new rive.Layout({fit: 'contain', alignment: 'centerLeft'}),
+});
+
 
     </script>
     
