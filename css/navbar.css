@@ -16,3 +16,20 @@
   font-weight: 400;
   line-height: normal;
 }
+.logo{
+animation-duration: 0.7s;
+animation-name: logo;
+animation-timing-function: ease-out;
+}
+
+@keyframes logo {
+  0%{
+position: relative;
+left: -100px;
+  }
+
+  100%{
+    position: relative;
+    left: 0px;
+  }
+}
