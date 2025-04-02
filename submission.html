@@ -109,6 +109,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </nav>
     </header>
     <!-- rest of body -->
-    <h1 class="h1 inter-700">form submitted</h1>
+    <h1 style="text-align: center;" class="inter-700">form ingediend</h1>
+    <h4 style="text-align: center;">Je wordt teruggestuurd</h4>
+    <h1 style="text-align: center;" id="countdown">5</h1>
+    <script>
+        let timeLeft = 4;
+        const countdownElement = document.getElementById('countdown');
+
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                countdownElement.innerHTML = "Redirecting...";
+            } else {
+                countdownElement.innerHTML = timeLeft;
+                timeLeft--;
+            }
+        }, 1000);
+    </script>
+    
   </body>
 </html>
