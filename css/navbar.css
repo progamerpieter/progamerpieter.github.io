@@ -20,6 +20,10 @@
 animation-duration: 0.7s;
 animation-name: logo;
 animation-timing-function: ease-out;
+transition: all 0.3s ease-in-out;
+}
+.logo:hover{
+scale: 1.15;
 }
 
 @keyframes logo {
