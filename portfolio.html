@@ -189,6 +189,18 @@
         
       </div>
     </div>
+    <!-- footer -->
+    <footer>
+      <div id="footer"></div>
+      
+      <script>
+          fetch('../footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer').innerHTML = data;
+              });
+      </script>
+     </footer>
     <script>
       const r = new rive.Rive({
   src: "../images/rive/Camera.riv",

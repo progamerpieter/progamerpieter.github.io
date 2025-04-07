@@ -316,7 +316,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="row">
     <p class="inter-700 display-6">Over mij</p>
     <p class="">Wilt u meer weten over wie ik ben? bekijk dan de "over mij" pagina</p>
-    <a href="../about-me.html"><button class="btn btn-primary">Over mij</button></a>
+    <a href="../Over.html"><button class="btn btn-primary">Over mij</button></a>
   </div>
 </div>
 <div class="container">
@@ -326,11 +326,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
     <!-- footer -->
-    <footer>
-      <div style="text-align: center; background-color: #7e7e7e59;" class="container-fluid footer" id="footer">
-    </footer>
-
-    </div>
+     <footer>
+      <div id="footer"></div>
+      
+      <script>
+          fetch('../footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer').innerHTML = data;
+              });
+      </script>
+     </footer>
     <!-- AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

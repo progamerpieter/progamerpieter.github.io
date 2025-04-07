@@ -209,6 +209,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
     </div>
+    <!-- footer -->
+    <footer>
+      <div id="footer"></div>
+      
+      <script>
+          fetch('../footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer').innerHTML = data;
+              });
+      </script>
+     </footer>
     <!-- AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
