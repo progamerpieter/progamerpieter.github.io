@@ -187,5 +187,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
        
     </div>
+    <!-- footer -->
+    <footer>
+      <div id="footer"></div>
+      
+      <script>
+          fetch('../footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer').innerHTML = data;
+              });
+      </script>
+     </footer>
 </body>
 </html>
