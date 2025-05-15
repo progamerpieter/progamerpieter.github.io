@@ -213,14 +213,15 @@
   },
   layout: new rive.Layout({fit: 'contain', alignment: 'centerLeft'}),
 });
-
+</script>
+<script>
   const editing = new rive.Rive({
   src: "../images/rive/editing.riv",
   canvas: document.getElementById("editing"),
   autoplay: true,
   stateMachines: "State Machine 1",
   onLoad: () => {
-    r.resizeDrawingSurfaceToCanvas();
+    editing.resizeDrawingSurfaceToCanvas();
     
   },
   layout: new rive.Layout({fit: 'contain', alignment: 'centerLeft'}),
