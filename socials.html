@@ -41,8 +41,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- add bootstrap -->
     <link rel="stylesheet" href="../css/main.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- google search console -->
     <meta
       name="google-site-verification"
@@ -177,18 +175,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   align-items: center;    /* Verticaal centreren */
            /* Zorg ervoor dat de hoogte is ingesteld */
 }
+.box {
+  opacity: 0;
+  transform: translateY(50px); /* start lower */
+}
     </style>
     <div class="container">
       <div class="row">
         <!-- socials text -->
         <div class="col-12">
-          <h1 class="visually-hidden">on this page you can find all the links to my socials</h1>
-          <h2 data-aos-delay="0" data-aos="fade-down" class="inter-700 display-4">Socials</h2>
+          <h2 class="inter-700 display-4">Socials</h2>
         </div>
       </div>
       <div class="inter-100 row gx-3 gy-4">
         <!-- youtube -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style">
+        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
           <a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCe4Sp23A27hAYrJX56xxdKw" >
           <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
             <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Youtube.svg" alt="youtube">
@@ -196,7 +197,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
         <!-- tiktok -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style">
+        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
           <a title="Tiktok" target="_blank" href="https://www.tiktok.com/@progamerpieter">
           <div  class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
             <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Tiktok.svg" alt="tiktok">
@@ -204,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
         <!-- instagram -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style">
+        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
           <a title="Instagram" target="_blank" href="https://www.instagram.com/pieterheidt/">
           <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
             <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Instagram.svg" alt="instagram">
@@ -214,7 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
       
       <!-- linkedin -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style">
+        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
           <a title="Linkedin" target="_blank" href="https://www.linkedin.com/in/pieter-heidt/">
           <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
             <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Linkedin.svg" alt="instagram">
@@ -222,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </div>
         <!-- twitter -->
-<div class="inter-100 col-12 col-md-6 col-lg-4 mobile-style">
+<div class="inter-100 col-12 col-md-6 col-lg-4 mobile-style box">
   <a title="X" target="_blank" href="https://twitter.com/progamerpieter">
   <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
     <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_X.svg" alt="instagram">
@@ -230,7 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
 </div>
         <!-- facebook -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style">
+        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
           <a title="Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=61552521119877">
           <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
             <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Facebook.svg" alt="facebook">
@@ -259,11 +260,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               });
       </script>
      </footer>
-    <!-- AOS-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <!-- end AOS -->
+     <script src="/javascript/Gsap/gsap.min.js"></script>
+     <script>
+      window.addEventListener("load", () => {
+    let tl = gsap.timeline();
+
+    tl.to(".box", {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.2, // each box starts after the previous
+      ease: "back.out(1.7)" // nice bounce effect
+    });
+  });
+     </script>
   </body>
 </html>
