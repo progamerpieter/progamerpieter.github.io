@@ -274,5 +274,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
      </script>
+     <script>
+    // Hover animation for each box
+    const boxes = document.querySelectorAll(".box");
+
+    boxes.forEach(box => {
+      // hover in
+      box.addEventListener("mouseenter", () => {
+        gsap.to(box, {
+          scale: 1.02,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+
+      // hover out
+      box.addEventListener("mouseleave", () => {
+        gsap.to(box, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.inOut"
+        });
+      });
+    });
+</script>
   </body>
 </html>
