@@ -26,7 +26,7 @@ transition: all 0.3s ease-in-out;
 scale: 1.15;
 }
 
-@keyframes logo {
+/* @keyframes logo {
   0%{
 position: relative;
 left: -100px;
@@ -37,3 +37,4 @@ left: -100px;
     left: 0px;
   }
 }
+*/
