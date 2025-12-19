@@ -250,7 +250,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- footer -->
     <footer>
-      <div id="footer"></div>
+      <div class="footer" id="footer"></div>
       
       <script>
           fetch('../footer.html')
@@ -261,19 +261,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </script>
      </footer>
      <script src="/javascript/Gsap/gsap.min.js"></script>
+     <script src="/javascript/Gsap/ScrollTrigger.min.js"></script>
      <script>
-      window.addEventListener("load", () => {
-    let tl = gsap.timeline();
-
-    tl.to(".box", {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      stagger: 0.2, // each box starts after the previous
-      ease: "back.out(1.7)" // nice bounce effect
-    });
+  gsap.registerPlugin(ScrollTrigger);
+</script>
+     <script>
+// Desktop: alles animates on load (zoals nu)
+if (window.innerWidth > 768) {
+  gsap.to(".box", {
+    y: 0,
+    opacity: 1,
+    duration: 0.6,
+    stagger: 0.2,
+    ease: "back.out(1.7)"
   });
-     </script>
+}
+
+// Mobile: wacht tot in beeld; als meerdere tegelijk in beeld komen -> alsnog stagger
+if (window.innerWidth <= 768) {
+  ScrollTrigger.batch(".box", {
+    start: "top 85%",
+    once: true,
+    onEnter: (batch) => {
+      gsap.to(batch, {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "back.out(1.7)",
+        stagger: 0.2,
+        overwrite: "auto"
+      });
+    }
+  });
+}
+</script>
      <script>
     // Hover animation for each box
     const boxes = document.querySelectorAll(".box");
@@ -297,6 +318,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       });
     });
+</script>
+<script>
+  //socials box fade//
+  gsap.from(".footer", { opacity: 0, duration: 1, delay: 1 });
 </script>
   </body>
 </html>
