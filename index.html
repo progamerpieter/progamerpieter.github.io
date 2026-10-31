@@ -198,29 +198,118 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </section>
-        
+        <!-- services blok-->
+        <section class="container my-5 services-block" id="diensten">
+          <div class="text-center mb-4">
+            <h2 class="inter-700">Diensten</h2>
+            <p class="inter-400 mb-0">Video op maat voor uw woning of evenement</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-12 col-md-6">
+              <div class="card h-100 service-card">
+                <div class="card-body d-flex flex-column p-4">
+                  <h3 class="inter-700 h4 card-title">Vastgoed</h3>
+                  <p class="card-text">Laat jouw woning opvallen tussen het aanbod en trek sneller de juiste koper aan.</p>
+                  <ul class="service-list">
+                    <li>Korte clip voor Funda en social media</li>
+                    <li>Woningvideo voor een online bezichtiging</li>
+                    <li>Dronebeelden van woning en omgeving</li>
+                  </ul>
+                  <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
+                    <a class="btn btn-secondary" href="portfolio.html">Bekijk voorbeelden</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card h-100 service-card">
+                <div class="card-body d-flex flex-column p-4">
+                  <h3 class="inter-700 h4 card-title">Evenementen</h3>
+                  <p class="card-text">Herbeleef jouw evenement en deel de sfeer met iedereen die er niet bij was.</p>
+                  <ul class="service-list">
+                    <li>Aftermovie van jouw evenement</li>
+                    <li>Highlight video met de beste momenten</li>
+                    <li>Korte reels voor Instagram en TikTok</li>
+                  </ul>
+                  <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
+                    <a class="btn btn-secondary" href="portfolio.html">Bekijk voorbeelden</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- einde services blok-->
 <!-- second block -->
         <section class="container text-center ">
             <h3 class="inter-700">Mijn Portfolio</h3>
-            <p>Neem een kijkje in mijn portfolio om kennis te maken met mijn skills</p>
-            <a href="/portfolio/videografie.html"><button class="inter-100 btn btn-secondary">Videografie</button></a>
-            <a href="/portfolio/editing.html"><button class="inter-100 btn btn-secondary">Editing</button></a>
         </section>
+
+        <!-- video carousel -->
+        <!--
+          Per item pas je 4 dingen aan:
+            1. data-youtube  = het YouTube video-ID (het stukje na "watch?v=", bv. dQw4w9WgXcQ)
+            2. img src       = je eigen thumbnail (16:9, bv. 1280x720 .webp of .jpg)
+            3. video data-src = korte preview-clip (5-10 sec, .mp4, zonder geluid, liefst < 2 MB)
+            4. titel + alt-tekst
+          Meer items? Kopieer een hele <button class="video-card"> ... </button>.
+        -->
+        <section class="container my-5 video-carousel" aria-label="Portfolio video's">
+          <div class="video-carousel-track">
+
+            <!-- item 1 -->
+            <button type="button" class="video-card" data-youtube="0T-eatF-EUA" data-title="Hart koffie film look">
+              <img class="video-card-thumb" src="images/portfolio/carousel/Hart koffie Thumbnail.jpg" alt="Titel video 1" loading="lazy">
+              <video class="video-card-preview" data-src="images/portfolio/carousel/Hart koffie preview.mp4" muted loop playsinline preload="none"></video>
+              <span class="video-card-title inter-700">Hart koffie film look</span>
+            </button>
+
+            <!-- item 2 -->
+            <button type="button" class="video-card" data-youtube="YOUTUBE_ID_2" data-title="Titel video 2">
+              <img class="video-card-thumb" src="images/portfolio/carousel/video-2-thumb.webp" alt="Titel video 2" loading="lazy">
+              <video class="video-card-preview" data-src="images/portfolio/carousel/video-2-preview.mp4" muted loop playsinline preload="none"></video>
+              <span class="video-card-title inter-700">Titel video 2</span>
+            </button>
+
+            <!-- item 3 -->
+            <button type="button" class="video-card" data-youtube="YOUTUBE_ID_3" data-title="Titel video 3">
+              <img class="video-card-thumb" src="images/portfolio/carousel/video-3-thumb.webp" alt="Titel video 3" loading="lazy">
+              <video class="video-card-preview" data-src="images/portfolio/carousel/video-3-preview.mp4" muted loop playsinline preload="none"></video>
+              <span class="video-card-title inter-700">Titel video 3</span>
+            </button>
+
+            <!-- item 4 -->
+            <button type="button" class="video-card" data-youtube="YOUTUBE_ID_4" data-title="Titel video 4">
+              <img class="video-card-thumb" src="images/portfolio/carousel/video-4-thumb.webp" alt="Titel video 4" loading="lazy">
+              <video class="video-card-preview" data-src="images/portfolio/carousel/video-4-preview.mp4" muted loop playsinline preload="none"></video>
+              <span class="video-card-title inter-700">Titel video 4</span>
+            </button>
+
+          </div>
+          <button type="button" class="video-carousel-nav prev" aria-label="Vorige">&#8249;</button>
+          <button type="button" class="video-carousel-nav next" aria-label="Volgende">&#8250;</button>
+        </section>
+
+        <!-- pop-up met YouTube video -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-dark border-0">
+              <div class="modal-header border-0 py-2">
+                <h5 class="modal-title text-white inter-700" id="videoModalTitle"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+              </div>
+              <div class="ratio ratio-16x9">
+                <iframe id="videoModalFrame" src="" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="javascript/video-carousel.js" defer></script>
+        <!-- einde video carousel -->
       
-    <!-- third block -->
-      <div class="container mt-2 text-center">
-  <div class="row">
-    <h3 class="inter-700 mb-1">Over mij</h3>
-    <p class="mb-2">Wilt u meer weten over wie ik ben? bekijk dan de "over mij" pagina</p>
-    <div><a href="../Over.html"><button class="btn btn-secondary">Over mij</button></a></div>
-  </div>
-</div>
-<div class="container mt-2 text-center">
-  <div class="row">
-    <h3 class="inter-700 mb-1">Neem nu contact op</h3>
-    <div><a href="../contact.html"><button class="btn btn-primary">Contact</button></a></div>
-  </div>
-</div>
+    
     <!-- footer -->
      <footer class="inter">
       <div id="footer"></div>
