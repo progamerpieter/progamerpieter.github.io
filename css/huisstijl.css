@@ -1,0 +1,334 @@
+/* ==========================================================================
+   Huisstijl Pieter Heidt
+   Eén bestand met alle kleuren, letters en bouwblokken van de site.
+   Laad dit als LAATSTE stylesheet in de <head>, dan wint het van Bootstrap:
+   <link rel="stylesheet" href="/css/huisstijl.css" />
+   Uitleg en voorbeelden: zie HUISSTIJL.md
+   ========================================================================== */
+
+/* ---------- 1. Basiswaarden (pas hier aan, dan verandert het overal) ---------- */
+:root {
+  /* Kleuren */
+  --hs-groen: #046553;          /* merkkleur, ook van de navbar */
+  --hs-groen-donker: #034a3d;
+  --hs-groen-knop: #156c46;     /* knoppen (= Bootstrap primary) */
+  --hs-accent: #3fbf8f;         /* lichtgroen: labels, bolletjes, hover */
+  --hs-accent-zacht: rgba(63, 191, 143, 0.15);
+
+  --hs-tekst: #ffffff;
+  --hs-tekst-zacht: rgba(255, 255, 255, 0.7);  /* lopende tekst in kaarten */
+  --hs-tekst-stil: rgba(255, 255, 255, 0.45);  /* nummers, datums */
+
+  --hs-vlak: rgba(255, 255, 255, 0.03);        /* achtergrond van een kaart */
+  --hs-rand: rgba(255, 255, 255, 0.08);        /* dunne randen en lijnen */
+  --hs-glans: inset 0 1px 0 rgba(255, 255, 255, 0.06); /* lichtrandje bovenaan */
+  --hs-gloed: radial-gradient(120% 80% at 0% 0%, rgba(4, 101, 83, 0.35), transparent 60%);
+  --hs-schaduw: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.35);
+
+  /* Vormen */
+  --hs-radius: 20px;            /* kaarten, navbar */
+  --hs-radius-klein: 12px;      /* video's, invoervelden, foto's in een kaart */
+  --hs-pil: 999px;              /* knoppen */
+
+  /* Beweging: snel weg, rustig uitlopen */
+  --hs-ease: cubic-bezier(0.25, 1, 0.5, 1);
+  --hs-snel: 0.25s;
+  --hs-rustig: 0.4s;
+
+  /* Letters */
+  --hs-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- 2. Basis ---------- */
+body {
+  font-family: var(--hs-font);
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background-color: #067e5a;
+  color: rgb(10, 10, 10);
+}
+
+:focus-visible {
+  outline: 2px solid var(--hs-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- 3. Sectiekop: label + titel + korte tekst ---------- */
+.hs-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.hs-head {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto 2.5rem;
+}
+.hs-head--links {
+  text-align: left;
+  margin-left: 0;
+}
+.hs-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hs-accent);
+}
+.hs-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.hs-lead {
+  margin: 0.85rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--hs-tekst-zacht);
+}
+
+/* Kaarten onder elkaar, met vaste ruimte ertussen */
+.hs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---------- 4. Kaart ---------- */
+.hs-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--hs-radius);
+  overflow: hidden;
+  background: var(--hs-gloed), var(--hs-vlak);
+  border: 1px solid var(--hs-rand);
+  box-shadow: var(--hs-glans);
+  color: var(--hs-tekst);
+  transition: transform var(--hs-rustig) var(--hs-ease),
+    border-color var(--hs-rustig) var(--hs-ease),
+    box-shadow var(--hs-rustig) var(--hs-ease);
+}
+/* Kaarten die je kunt aanwijzen komen iets omhoog */
+.hs-card--hover:hover,
+a.hs-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(63, 191, 143, 0.35);
+  box-shadow: var(--hs-glans), var(--hs-schaduw);
+}
+a.hs-card {
+  text-decoration: none;
+}
+a.hs-card:active {
+  transform: translateY(-2px) scale(0.99);
+  transition-duration: 100ms;
+}
+
+/* Afbeelding / animatie bovenaan een kaart */
+.hs-visual {
+  height: 120px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+.hs-visual canvas {
+  width: 100%;
+  height: 100%;
+}
+.hs-visual img {
+  height: 100px;
+  width: auto;
+}
+
+.hs-card-title {
+  margin: 0.75rem 0 0.5rem;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.hs-text {
+  color: var(--hs-tekst-zacht);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Lijst met groene bolletjes en dunne lijnen */
+.hs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  border-top: 1px solid var(--hs-rand);
+}
+.hs-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--hs-rand);
+}
+.hs-list li::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hs-accent);
+  box-shadow: 0 0 0 4px var(--hs-accent-zacht);
+}
+
+/* Knoppen onderaan een kaart */
+.hs-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
+/* ---------- 5. Knoppen en links ---------- */
+.btn {
+  border-radius: var(--hs-pil);
+  padding: 0.6rem 1.4rem;
+  font-weight: 500;
+}
+.btn-primary {
+  --bs-btn-bg: var(--hs-groen-knop);
+  --bs-btn-border-color: var(--hs-groen-knop);
+  --bs-btn-hover-bg: #1a8256;
+  --bs-btn-hover-border-color: #1a8256;
+  --bs-btn-active-bg: #115a3a;
+  --bs-btn-active-border-color: #115a3a;
+}
+
+/* Rustige tekstlink met pijltje */
+.hs-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+}
+.hs-link span {
+  display: inline-block;
+  transition: transform var(--hs-snel) var(--hs-ease);
+}
+.hs-link:hover {
+  color: #fff;
+}
+.hs-link:hover span {
+  transform: translateX(4px);
+}
+.hs-link:active {
+  opacity: 0.6;
+}
+
+/* Terug-link bovenaan subpagina's */
+.hs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--hs-tekst-zacht);
+  text-decoration: none;
+  font-weight: 500;
+}
+.hs-back span {
+  display: inline-block;
+  transition: transform var(--hs-snel) var(--hs-ease);
+}
+.hs-back:hover {
+  color: #fff;
+}
+.hs-back:hover span {
+  transform: translateX(-4px);
+}
+.hs-back:active {
+  opacity: 0.6;
+}
+
+/* ---------- 6. Media ---------- */
+.video-embed,
+.hs-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: var(--hs-radius-klein);
+  background: #000;
+}
+.hs-card .video-embed,
+.hs-card .hs-media {
+  margin-bottom: 1.5rem;
+}
+.hs-foto {
+  border-radius: var(--hs-radius);
+}
+
+/* ---------- 7. Formulieren ---------- */
+.hs-form .form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--hs-tekst-zacht);
+  margin-bottom: 0.35rem;
+}
+.hs-form .form-control {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--hs-rand);
+  border-radius: var(--hs-radius-klein);
+  color: var(--hs-tekst);
+  padding: 0.75rem 1rem;
+  transition: border-color var(--hs-snel) var(--hs-ease),
+    box-shadow var(--hs-snel) var(--hs-ease);
+}
+.hs-form .form-control::placeholder {
+  color: var(--hs-tekst-stil);
+}
+.hs-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--hs-accent);
+  box-shadow: 0 0 0 4px var(--hs-accent-zacht);
+}
+
+/* ---------- 8. Lopende tekst (projectpagina's) ---------- */
+.hs-prose {
+  max-width: 46rem;
+  line-height: 1.7;
+  color: var(--hs-tekst-zacht);
+}
+.hs-prose h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: var(--hs-tekst);
+}
+
+/* ---------- 9. Toegankelijkheid ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hs-card,
+  .hs-link span,
+  .hs-back span {
+    transition: none;
+  }
+  .hs-card--hover:hover,
+  a.hs-card:hover,
+  a.hs-card:active,
+  .hs-link:hover span,
+  .hs-back:hover span {
+    transform: none;
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --hs-rand: rgba(255, 255, 255, 0.5);
+    --hs-tekst-zacht: #fff;
+    --hs-tekst-stil: rgba(255, 255, 255, 0.8);
+  }
+  .hs-card {
+    background: #111;
+  }
+}

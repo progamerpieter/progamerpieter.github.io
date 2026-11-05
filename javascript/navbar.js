@@ -5,9 +5,9 @@
 
 const NAV_LINKS = [
   { href: "/index.html", label: "Home" },
-  { href: "/portfolio.html", label: "portfolio" },
-  { href: "/contact.html", label: "contact" },
-  { href: "/socials.html", label: "socials" },
+  { href: "/portfolio.html", label: "Portfolio" },
+  { href: "/contact.html", label: "Contact" },
+  { href: "/socials.html", label: "Socials" },
 ];
 
 (function () {
@@ -50,4 +50,5 @@ const NAV_LINKS = [
 
   // Zet de navbar precies op de plek van deze <script>-tag.
   document.currentScript.insertAdjacentHTML("beforebegin", html);
+
 })();

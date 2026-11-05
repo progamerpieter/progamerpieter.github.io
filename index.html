@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
+    <!-- Bij refresh altijd bovenaan beginnen, zodat de intro-animatie in beeld afspeelt
+         (anders zet de browser je terug op de oude scrollpositie) -->
+    <script>
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Google Tag Manager -->
@@ -54,8 +60,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- add bootstrap -->
     <link rel="stylesheet" href="../css/main.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- google search console -->
     <meta
@@ -72,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="theme-color" content="#05624a" />
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/video-carousel.css?v=1" />
+    <link rel="stylesheet" href="css/video-carousel.css?v=3" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/footer.css" />
@@ -100,38 +104,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:image" content="https://progamerpieter.github.io/images/open-graph/Logo.png">
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+      <link rel="stylesheet" href="/css/huisstijl.css" />
   </head>
 
   <body data-bs-theme="dark" id="body">
-    <!-- Text selection color -->
-     <style>
-      ::selection{
-        background-color: #067e5a;
-        color: rgb(10, 10, 10);
-      }
-     </style>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45GZV2B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <!-- modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Thema</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Selecteer welk thema u wilt gebruiken
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="Darkmode()">Donker thema</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="Lightmode()">Licht thema</button>
-      </div>
-    </div>
-  </div>
-</div>
     <!-- navbar -->
     <header >
       <script src="/javascript/navbar.js"></script>
@@ -142,65 +122,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section class="container mt-4 hero-block">
           <div class="row">
             <div class="col-12  col-md-7 hero-text">
-              <p style="margin-bottom: 0px;" class="inter-400 hero-tag">Vastgoedvideograaf en evenementenvideograaf</p>
+              <p class="hs-eyebrow hero-tag">Vastgoedvideograaf en evenementenvideograaf</p>
               <h1 class="inter-700 display-4 hero-h1">Pieter Heidt</h1>
-              <p class="inter-400 hero-p">Ik maak video's waardoor uw woning opvalt en uw evenement nog lang wordt herinnerd.</p>
-              <a class="hero-button" href="../contact.html"><button class="inter-100 btn btn-primary primary-bubble-btn hero-button">Contactpagina</button></a>
+              <p class="hs-lead hero-p mb-4">Ik maak video's waardoor uw woning opvalt en uw evenement nog lang wordt herinnerd.</p>
+              <a class="hero-button inter-400 btn btn-primary primary-bubble-btn" href="../contact.html">Contactpagina</a>
 
             </div>
             <div class="col-12 col-md-5 mt-2 hero-img">
-              <img title="Pieter Heidt in Rotterdam 2023" class="img-fluid rounded" src="images/Pieter_Heidt_downscale.webp" alt="profile picture"  />
+              <img title="Pieter Heidt in Rotterdam 2023" class="img-fluid hs-foto" src="images/Pieter_Heidt_downscale.webp" alt="profile picture"  />
               <p class="inter-100"><i>Dit is een foto die ik heb gemaakt in Rotterdam augustus 2023</i></p>
             </div>
           </div>
         </section>
         <!-- services blok-->
-        <section class="container my-5 services-block" id="diensten">
-          <div class="text-center mb-4">
-            <h2 class="inter-700">Diensten</h2>
-            <p class="inter-400 mb-0">Video op maat voor uw woning of evenement</p>
+        <section class="container hs-section" id="diensten">
+          <div class="hs-head">
+            <p class="hs-eyebrow inter-400">Diensten</p>
+            <h2 class="inter-700 hs-title">Video op maat voor uw woning of evenement</h2>
           </div>
           <div class="row g-4">
             <div class="col-12 col-md-6">
-              <div class="card h-100 service-card">
-                <div class="card-body d-flex flex-column p-4">
-                  <h3 class="inter-700 h4 card-title">Vastgoed</h3>
-                  <p class="card-text">Laat jouw woning opvallen tussen het aanbod en trek sneller de juiste koper aan.</p>
-                  <ul class="service-list">
-                    <li>Korte clip voor Funda en social media</li>
-                    <li>Woningvideo voor een online bezichtiging</li>
-                    <li>Dronebeelden van woning en omgeving</li>
-                  </ul>
-                  <div class="mt-auto d-flex flex-wrap gap-2">
-                    <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
-                    <a class="btn btn-secondary" href="portfolio.html">Bekijk voorbeelden</a>
-                  </div>
+              <article class="hs-card hs-card--hover h-100">
+                <h3 class="inter-700 hs-card-title">Vastgoed</h3>
+                <p class="hs-text">Laat jouw woning opvallen tussen het aanbod en trek sneller de juiste koper aan.</p>
+                <ul class="hs-list">
+                  <li>Korte clip voor Funda en social media</li>
+                  <li>Woningvideo voor een online bezichtiging</li>
+                  <li>Dronebeelden van woning en omgeving</li>
+                </ul>
+                <div class="hs-actions">
+                  <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
+                  <a class="hs-link" href="portfolio.html">Bekijk voorbeelden <span aria-hidden="true">&rarr;</span></a>
                 </div>
-              </div>
+              </article>
             </div>
             <div class="col-12 col-md-6">
-              <div class="card h-100 service-card">
-                <div class="card-body d-flex flex-column p-4">
-                  <h3 class="inter-700 h4 card-title">Evenementen</h3>
-                  <p class="card-text">Herbeleef jouw evenement en deel de sfeer met iedereen die er niet bij was.</p>
-                  <ul class="service-list">
-                    <li>Aftermovie van jouw evenement</li>
-                    <li>Highlight video met de beste momenten</li>
-                    <li>Korte reels voor Instagram en TikTok</li>
-                  </ul>
-                  <div class="mt-auto d-flex flex-wrap gap-2">
-                    <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
-                    <a class="btn btn-secondary" href="portfolio.html">Bekijk voorbeelden</a>
-                  </div>
+              <article class="hs-card hs-card--hover h-100">
+                <h3 class="inter-700 hs-card-title">Evenementen</h3>
+                <p class="hs-text">Herbeleef jouw evenement en deel de sfeer met iedereen die er niet bij was.</p>
+                <ul class="hs-list">
+                  <li>Aftermovie van jouw evenement</li>
+                  <li>Highlight video met de beste momenten</li>
+                  <li>Korte reels voor Instagram en TikTok</li>
+                </ul>
+                <div class="hs-actions">
+                  <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
+                  <a class="hs-link" href="portfolio.html">Bekijk voorbeelden <span aria-hidden="true">&rarr;</span></a>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </section>
         <!-- einde services blok-->
 <!-- second block -->
-        <section class="container text-center ">
-            <h3 class="inter-700">Mijn Portfolio</h3>
+        <section class="container hs-section mb-0">
+          <div class="hs-head mb-0">
+            <p class="hs-eyebrow">Portfolio</p>
+            <h2 class="hs-title">Recent werk</h2>
+          </div>
         </section>
 
         <!-- video carousel -->
@@ -257,7 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
         </div>
-        <script src="javascript/video-carousel.js?v=1" defer></script>
+        <script src="javascript/video-carousel.js?v=3" defer></script>
         <!-- einde video carousel -->
       
     
@@ -271,10 +250,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 mm.add({
   isDesktop: "(min-width: 768px)",
-  isMobile: "(max-width: 767px)"
+  isMobile: "(max-width: 767px)",
+  reduceMotion: "(prefers-reduced-motion: reduce)"
 }, (context) => {
-  let { isDesktop, isMobile } = context.conditions;
+  let { isDesktop, isMobile, reduceMotion } = context.conditions;
   let tl = gsap.timeline();
+
+  // Minder beweging: alleen een korte fade, niets dat schuift
+  if (reduceMotion) {
+    tl.from(".hero-text, .hero-img", { opacity: 0, duration: 0.2 });
+    return;
+  }
 
   // Shared animations (runs on both)
   tl.from(".hero-tag", { delay: 0.2, y: 40, opacity: 0, ease: "power2.out" })
@@ -295,15 +281,11 @@ mm.add({
 });
 
      </script>
-    <!-- AOS-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <!-- end AOS -->
 <script>
   //footer fade//
-  gsap.from("#footer", { opacity: 0, duration: 1, delay: 1 });
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.from("#footer", { opacity: 0, duration: 0.6, delay: 0.2 });
+  }
 </script>
   </body>
 </html>

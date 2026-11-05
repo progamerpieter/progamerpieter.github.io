@@ -94,16 +94,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="revisit-after" content="1 days" />
     <meta name="author" content="pieter" />
     <meta name="copyright" content="progamerpieter">
+      <link rel="stylesheet" href="/css/huisstijl.css" />
   </head>
 
   <body data-bs-theme="dark" id="body">
-    <!-- Text selection color -->
-     <style>
-      ::selection{
-        background-color: #067e5a;
-        color: rgb(10, 10, 10);
-      }
-     </style>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45GZV2B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -114,95 +108,104 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     <!--rest of body-->
     <style>
-      @media (max-width: 768px) {
-  .mobile-style {
-    transform: scale(1);
-
-  }
-}
-.social-icon {
-    width: 200px; /* Stel de gewenste breedte in */
-    height: 200px; /* Stel de gewenste hoogte in */
-  }
-  .social-icon-container {
-  display: flex;
-  justify-content: center; /* Horizontaal centreren */
-  align-items: center;    /* Verticaal centreren */
-           /* Zorg ervoor dat de hoogte is ingesteld */
-}
-.box {
-  opacity: 0;
-  transform: translateY(50px); /* start lower */
-}
+      .social-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+      }
+      .social-icon {
+        width: 64px;
+        height: 64px;
+        flex: none;
+        object-fit: contain;
+        pointer-events: none;
+      }
+      .social-text { flex: 1; }
+      .social-arrow {
+        color: var(--hs-tekst-stil);
+        font-size: 1.25rem;
+        transition: color var(--hs-snel) var(--hs-ease), transform var(--hs-snel) var(--hs-ease);
+      }
+      .social-card:hover .social-arrow {
+        color: var(--hs-accent);
+        transform: translate(2px, -2px);
+      }
+      .box {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .box { opacity: 1; transform: none; }
+      }
     </style>
-    <div class="container">
-      <div class="row">
-        <!-- socials text -->
-        <div class="col-12">
-          <h2 class="inter-700 display-4">Socials</h2>
+    <main class="container hs-section">
+      <div class="hs-head">
+        <p class="hs-eyebrow">Socials</p>
+        <h1 class="hs-title">Volg mijn werk</h1>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4 box">
+          <a class="hs-card social-card h-100" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCe4Sp23A27hAYrJX56xxdKw">
+            <img class="social-icon" src="../images/social icons/social_Youtube.svg" alt="" />
+            <span class="social-text">
+              <span class="hs-card-title d-block m-0">YouTube</span>
+              <span class="hs-text d-block m-0">Video's en projecten</span>
+            </span>
+            <span class="social-arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 box">
+          <a class="hs-card social-card h-100" target="_blank" rel="noopener" href="https://www.tiktok.com/@progamerpieter">
+            <img class="social-icon" src="../images/social icons/social_Tiktok.svg" alt="" />
+            <span class="social-text">
+              <span class="hs-card-title d-block m-0">TikTok</span>
+              <span class="hs-text d-block m-0">Korte clips</span>
+            </span>
+            <span class="social-arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 box">
+          <a class="hs-card social-card h-100" target="_blank" rel="noopener" href="https://www.instagram.com/pieterheidt/">
+            <img class="social-icon" src="../images/social icons/social_Instagram.svg" alt="" />
+            <span class="social-text">
+              <span class="hs-card-title d-block m-0">Instagram</span>
+              <span class="hs-text d-block m-0">Foto's en reels</span>
+            </span>
+            <span class="social-arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 box">
+          <a class="hs-card social-card h-100" target="_blank" rel="noopener" href="https://www.linkedin.com/in/pieter-heidt/">
+            <img class="social-icon" src="../images/social icons/social_Linkedin.svg" alt="" />
+            <span class="social-text">
+              <span class="hs-card-title d-block m-0">LinkedIn</span>
+              <span class="hs-text d-block m-0">Werk en ervaring</span>
+            </span>
+            <span class="social-arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 box">
+          <a class="hs-card social-card h-100" target="_blank" rel="noopener" href="https://twitter.com/progamerpieter">
+            <img class="social-icon" src="../images/social icons/social_X.svg" alt="" />
+            <span class="social-text">
+              <span class="hs-card-title d-block m-0">X</span>
+              <span class="hs-text d-block m-0">Updates</span>
+            </span>
+            <span class="social-arrow" aria-hidden="true">&nearr;</span>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 box">
+          <a class="hs-card social-card h-100" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61552521119877">
+            <img class="social-icon" src="../images/social icons/social_Facebook.svg" alt="" />
+            <span class="social-text">
+              <span class="hs-card-title d-block m-0">Facebook</span>
+              <span class="hs-text d-block m-0">Nieuws</span>
+            </span>
+            <span class="social-arrow" aria-hidden="true">&nearr;</span>
+          </a>
         </div>
       </div>
-      <div class="inter-100 row gx-3 gy-4">
-        <!-- youtube -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
-          <a title="Youtube" target="_blank" href="https://www.youtube.com/channel/UCe4Sp23A27hAYrJX56xxdKw" >
-          <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
-            <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Youtube.svg" alt="youtube">
-          </div>
-          </a>
-        </div>
-        <!-- tiktok -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
-          <a title="Tiktok" target="_blank" href="https://www.tiktok.com/@progamerpieter">
-          <div  class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
-            <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Tiktok.svg" alt="tiktok">
-          </div>
-          </a>
-        </div>
-        <!-- instagram -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
-          <a title="Instagram" target="_blank" href="https://www.instagram.com/pieterheidt/">
-          <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
-            <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Instagram.svg" alt="instagram">
-          </div>
-          </a>
-        </div>
-        
-      
-      <!-- linkedin -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
-          <a title="Linkedin" target="_blank" href="https://www.linkedin.com/in/pieter-heidt/">
-          <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
-            <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Linkedin.svg" alt="instagram">
-          </div>
-          </a>
-        </div>
-        <!-- twitter -->
-<div class="inter-100 col-12 col-md-6 col-lg-4 mobile-style box">
-  <a title="X" target="_blank" href="https://twitter.com/progamerpieter">
-  <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
-    <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_X.svg" alt="instagram">
-  </div>
-  </a>
-</div>
-        <!-- facebook -->
-        <div class="col-12 col-md-6 col-lg-4 mobile-style box">
-          <a title="Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=61552521119877">
-          <div class="p-2 rounded-4 social-icon-container" style="background-color: rgb(3, 68, 63);">
-            <img class="social-icon" style="margin-bottom: 10px; pointer-events: none" src="../images/social icons/social_Facebook.svg" alt="facebook">
-          </div>
-          </a>
-        </div>
-        
-        </div>
-       
-        <!-- examples -->
-        <div class="row">
-          <div class="col-4">
-            
-          </div>
-        </div>
-    </div>
+    </main>
     <!-- footer -->
     <footer>
       <script src="/javascript/footer.js"></script>
@@ -213,6 +216,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   gsap.registerPlugin(ScrollTrigger);
 </script>
      <script>
+// Footer pas laten verschijnen als alle boxes er staan
+const footerHidden = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (footerHidden) gsap.set("#footer", { opacity: 0 });
+const showFooter = () => {
+  if (footerHidden) gsap.to("#footer", { opacity: 1, duration: 0.6 });
+};
+const lastBox = document.querySelectorAll(".box")[document.querySelectorAll(".box").length - 1];
+
 // Desktop: alles animates on load (zoals nu)
 if (window.innerWidth > 768) {
   gsap.to(".box", {
@@ -220,7 +231,8 @@ if (window.innerWidth > 768) {
     opacity: 1,
     duration: 0.6,
     stagger: 0.2,
-    ease: "back.out(1.7)"
+    ease: "back.out(1.7)",
+    onComplete: showFooter
   });
 }
 
@@ -236,39 +248,13 @@ if (window.innerWidth <= 768) {
         duration: 0.6,
         ease: "back.out(1.7)",
         stagger: 0.2,
-        overwrite: "auto"
+        overwrite: "auto",
+        // footer pas na de laatste box
+        onComplete: batch.includes(lastBox) ? showFooter : undefined
       });
     }
   });
 }
-</script>
-     <script>
-    // Hover animation for each box
-    const boxes = document.querySelectorAll(".box");
-
-    boxes.forEach(box => {
-      // hover in
-      box.addEventListener("mouseenter", () => {
-        gsap.to(box, {
-          scale: 1.02,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      });
-
-      // hover out
-      box.addEventListener("mouseleave", () => {
-        gsap.to(box, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.inOut"
-        });
-      });
-    });
-</script>
-<script>
-  //socials box fade//
-  gsap.from("#footer", { opacity: 0, duration: 1, delay: 1 });
 </script>
   </body>
 </html>

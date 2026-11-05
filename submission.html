@@ -46,15 +46,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>submitted</title>
     <meta name="”robots”" content="”noindex”" />
     <meta name="copyright" content="progamerpieter">
+      <link rel="stylesheet" href="/css/huisstijl.css" />
   </head>
   <body data-bs-theme="dark" id="body">
-    <!-- Text selection color -->
-     <style>
-      ::selection{
-        background-color: #067e5a;
-        color: rgb(10, 10, 10);
-      }
-     </style>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45GZV2B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -64,9 +58,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script src="/javascript/navbar.js"></script>
     </header>
     <!-- rest of body -->
-    <h1 style="text-align: center;" class="inter-700">formulier ingediend</h1>
-    <h4 style="text-align: center;">Je wordt teruggestuurd</h4>
-    <h1 style="text-align: center;" id="countdown">5</h1>
+    <main class="container hs-section">
+      <div class="hs-head">
+        <p class="hs-eyebrow">Bedankt</p>
+        <h1 class="hs-title">Je bericht is verstuurd</h1>
+        <p class="hs-lead">Je wordt over <span id="countdown">5</span> seconden teruggestuurd.</p>
+      </div>
+    </main>
     <script>
         let timeLeft = 4;
         const countdownElement = document.getElementById('countdown');
@@ -74,7 +72,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const countdown = setInterval(() => {
             if (timeLeft <= 0) {
                 clearInterval(countdown);
-                countdownElement.innerHTML = "Redirecting...";
+                countdownElement.innerHTML = "0";
             } else {
                 countdownElement.innerHTML = timeLeft;
                 timeLeft--;

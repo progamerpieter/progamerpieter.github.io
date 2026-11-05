@@ -45,7 +45,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
     <!-- css -->
     <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/font.css">
      <!-- javascript -->
@@ -77,15 +76,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Progamerpieter</title>
+      <link rel="stylesheet" href="/css/huisstijl.css" />
   </head>
   <body data-bs-theme="dark" id="body">
-    <!-- Text selection color -->
-     <style>
-      ::selection{
-        background-color: #067e5a;
-        color: rgb(10, 10, 10);
-      }
-     </style>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45GZV2B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -104,95 +97,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       style="display: none"
       onload="if(submitted){window.location='submission.html';}"
     ></iframe>
-    <form
-      class="form"
-      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfRwDZxLLXDuRfBd84TdK3Xro-f92cAMvqXiy6ammuMy3LvJw/formResponse"
-      method="post"
-      target="hiddenConfirm"
-      onsubmit="submitted=true"
-      id="contact_form"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="inter-100 row">
-              <h1 class="inter-700">Contact</h1>
+    <main class="container hs-section">
+      <div class="hs-head">
+        <p class="hs-eyebrow">Contact</p>
+        <h1 class="hs-title">Neem contact op</h1>
+        <p class="hs-lead">Vertel kort wat je zoekt, dan neem ik zo snel mogelijk contact met je op.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-lg-8">
+          <form
+            class="hs-card hs-form h-100"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfRwDZxLLXDuRfBd84TdK3Xro-f92cAMvqXiy6ammuMy3LvJw/formResponse"
+            method="post"
+            target="hiddenConfirm"
+            onsubmit="submitted=true"
+            id="contact_form"
+          >
+            <div class="row g-3">
               <div class="col-12 col-sm-6">
-                <input
-                  required
-                  name="entry.2005620554"
-                  type="text"
-                  class="form-control form"
-                  placeholder="First name"
-                  aria-label="First name"
-                  autocomplete="given-name"
-                />
+                <label class="form-label" for="voornaam">Voornaam</label>
+                <input required id="voornaam" name="entry.2005620554" type="text" class="form-control" autocomplete="given-name" />
               </div>
               <div class="col-12 col-sm-6">
-                <input
-                  required
-                  name="entry.1035776649"
-                  type="text"
-                  class="form-control form"
-                  placeholder="Last name"
-                  aria-label="Last name"
-                  autocomplete="family-name"
-                />
+                <label class="form-label" for="achternaam">Achternaam</label>
+                <input required id="achternaam" name="entry.1035776649" type="text" class="form-control" autocomplete="family-name" />
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="email">E-mail</label>
+                <input required id="email" name="entry.123859892" type="email" class="form-control" autocomplete="email" />
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="bericht">Bericht</label>
+                <textarea required id="bericht" name="entry.3142086" class="form-control" rows="5" placeholder="Bijvoorbeeld: een woningvideo voor een huis in Den Haag"></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Versturen</button>
               </div>
             </div>
-
-            <div class="inter-100 col-12">
-              <input
-                name="entry.123859892"
-                required
-                type="email"
-                class="form-control form"
-                id="exampleFormControlInput1"
-                placeholder="e-mail"
-                autocomplete="email"
-              />
-            </div>
-
-            <div class="col-12 inter-100">
-              <textarea
-                name="entry.3142086"
-                required
-                class="form-control form"
-                id="exampleFormControlTextarea1"
-                rows="3"
-                placeholder="text"
-              ></textarea>
-            </div>
-          </div>
+          </form>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <button target="_blank" type="submit" class="inter-100 btn btn-primary form">
-              Submit
-            </button>
-          </div>
+        <div class="col-12 col-lg-4">
+          <address class="hs-card h-100 mb-0">
+            <h2 class="hs-card-title mt-0">Contactinformatie</h2>
+            <ul class="hs-list mb-0">
+              <li><a class="hs-link" href="mailto:info@pieterheidt.nl">info@pieterheidt.nl</a></li>
+              <li><a class="hs-link" href="tel:+31619736853">06 19736853</a></li>
+            </ul>
+          </address>
         </div>
       </div>
-    </form>
-    <address class="container contactinfo">
-        <H4 class="inter-700">Contactinformatie</H4>
-             <p>E-mail: <a href="mailto:info@pieterheidt.nl">info@pieterheidt.nl</a></p>
-             <p>Telefoonnummer: <a href="tel:+31619736853">06 19736853</a></p>
-      </address>
+    </main>
     <!-- footer -->
     <footer>
       <script src="/javascript/footer.js"></script>
      </footer>
- <style>
-  .contactinfo {
-    text-align: center;
-    margin-top: 20px;
-  }
-</style>
      <script src="/javascript/Gsap/gsap.min.js"></script>
 <script>
   //footer fade//
-  gsap.from("#footer", { opacity: 0, duration: 1, delay: 1 });
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.from("#footer", { opacity: 0, duration: 0.6, delay: 0.2 });
+  }
 </script>
   </body>
 </html>

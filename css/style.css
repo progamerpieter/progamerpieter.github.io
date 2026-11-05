@@ -2,35 +2,3 @@
 .primary {
     
 }
-
-/* Services block */
-.service-card {
-    border: 1px solid var(--bs-primary);
-    border-top-width: 4px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--bs-box-shadow);
-}
-.service-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1.5rem;
-}
-.service-list li {
-    position: relative;
-    padding-left: 1.6rem;
-    margin-bottom: 0.5rem;
-}
-.service-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--bs-primary-text-emphasis);
-    font-weight: 700;
-}
-@media (prefers-reduced-motion: reduce) {
-    .service-card { transition: none; }
-    .service-card:hover { transform: none; }
-}
