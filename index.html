@@ -125,7 +125,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p class="hs-eyebrow hero-tag">Vastgoedvideograaf en evenementenvideograaf</p>
               <h1 class="inter-700 display-4 hero-h1">Pieter Heidt</h1>
               <p class="hs-lead hero-p mb-4">Ik maak video's waardoor uw woning opvalt en uw evenement nog lang wordt herinnerd.</p>
-              <a class="hero-button inter-400 btn btn-primary primary-bubble-btn" href="../contact.html">Contactpagina</a>
+              <!-- De animatie draait op deze div, niet op de knop zelf:
+                   de knop heeft een CSS-transition op transform die GSAP in de war brengt -->
+              <div class="hero-button">
+                <a class="inter-400 btn btn-primary primary-bubble-btn" href="/contact.html">Kom in contact</a>
+              </div>
 
             </div>
             <div class="col-12 col-md-5 mt-2 hero-img">
