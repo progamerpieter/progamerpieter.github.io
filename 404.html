@@ -71,15 +71,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+      <link rel="stylesheet" href="/css/huisstijl.css" />
   </head>
   <body data-bs-theme="dark" id="body">
-    <!-- Text selection color -->
-     <style>
-      ::selection{
-        background-color: #067e5a;
-        color: rgb(10, 10, 10);
-      }
-     </style>
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45GZV2B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -90,8 +84,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     <!-- rest of body -->
     <main>
-      <h1 class="mt-3"  style="text-align: center"><strong class="fw-semibold">Pagina niet gevonden</strong></h1>
-      <div class="d-flex justify-content-center"><a href="/index.html"><button class="btn btn-primary">Terug naar homepage</button></a></div>
+      <div class="container hs-section">
+        <div class="hs-head mb-4">
+          <p class="hs-eyebrow">Fout 404</p>
+          <h1 class="hs-title">Pagina niet gevonden</h1>
+          <p class="hs-lead">Deze pagina bestaat niet (meer). Ga terug naar de homepage.</p>
+        </div>
+        <div class="d-flex justify-content-center"><a class="btn btn-primary" href="/index.html">Terug naar homepage</a></div>
+      </div>
       <div style="display: flex; justify-content: center; align-items: center; height: 35vh;">
         <canvas  id="canvas"></canvas>
       </div>
@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const riveInstance = new rive.Rive({
       src: '/images/rive/404.riv',
       canvas: document.getElementById('canvas'),
-      autoplay: true,
+      autoplay: !matchMedia("(prefers-reduced-motion: reduce)").matches,
       layout: new rive.Layout({ fit: 'cover', alignment: 'center' }),
       onLoad: () => {
         // Prevent a blurry canvas by using the device pixel ratio

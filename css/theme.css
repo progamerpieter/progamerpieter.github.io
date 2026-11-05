@@ -1,0 +1,46 @@
+/* Gedeelde stijl voor alle pagina's (wordt overal al geladen). */
+
+/* Koppen: grote tekst iets strakker, kleine tekst laten zoals hij is */
+h1, .h1, .display-4 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+h2, .h2, h3, .h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Knoppen reageren direct bij indrukken, niet pas bij loslaten.
+   a.btn/button.btn wint van Bootstrap, ook als die later laadt. */
+a.btn,
+button.btn {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+    transform 100ms ease-out;
+}
+a.btn:active,
+button.btn:active {
+  transform: scale(0.97);
+}
+
+/* Rive-animaties op de portfoliopagina passen op elk scherm */
+.portfolio-anim {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ingesloten video's schalen mee met het scherm */
+.video-embed {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(16px, 4vw, 45px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.btn:active,
+  button.btn:active {
+    transform: none;
+  }
+}

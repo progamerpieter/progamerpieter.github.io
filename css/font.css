@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@394&display=swap');
+/* Inter als variabel font: alle diktes (100-900) en optische maten */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 
 
+/* Was eerst dikte 100, maar dat is te dun om goed te lezen.
+   Omdat alleen dikte 394 geladen werd, zag je tot nu toe toch al ~400. */
 .inter-100 {
   font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: thin;
-  font-variation-settings:
-    "slnt" 0;
-    
+  font-weight: 300;
+  font-style: normal;
 }
 
 .inter-400 {
@@ -16,17 +16,11 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
-    
 }
 
 .inter-700 {
   font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-style: bold;
-  font-variation-settings:
-    "slnt" 0;
-    
+  font-style: normal;
 }

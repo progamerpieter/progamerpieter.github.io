@@ -48,7 +48,7 @@ const SOCIALS = [
           .social {
             display: flex;
             justify-content: center;
-            fill: #e6dddd;
+            fill: var(--bs-body-color);
           }
           .hover {
             transition: fill 0.1s ease;

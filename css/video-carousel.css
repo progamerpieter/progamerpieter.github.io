@@ -17,8 +17,12 @@
 .video-carousel-track { cursor: grab; }
 .video-carousel-track.is-dragging {
     cursor: grabbing;
-    scroll-snap-type: none;
     user-select: none;
+}
+/* snapping off while dragging or while the script glides to a card */
+.video-carousel-track.is-dragging,
+.video-carousel-track.is-gliding {
+    scroll-snap-type: none;
 }
 .video-carousel-track.is-dragging .video-card { cursor: grabbing; }
 .video-card img { -webkit-user-drag: none; }
@@ -33,7 +37,7 @@
     background: #1a1a1a;
     cursor: pointer;
     scroll-snap-align: start;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .video-card-thumb,
 .video-card-preview {
@@ -59,12 +63,20 @@
 }
 .video-card:hover,
 .video-card:focus-visible {
-    transform: scale(1.08);
+    transform: scale(1.04);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
     z-index: 2;
 }
 .video-card:hover .video-card-preview {
     opacity: 1;
+}
+/* direct feedback when pressed (not while dragging) */
+.video-carousel-track:not(.is-dragging) .video-card:active {
+    transform: scale(1.01);
+    transition-duration: 100ms;
+}
+.video-carousel-track.is-dragging .video-card {
+    transform: none;
 }
 .video-card:focus-visible {
     outline: 3px solid var(--bs-primary);
@@ -82,6 +94,16 @@
     line-height: 1;
     color: #fff;
     background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    transition: opacity 0.2s ease, transform 100ms ease-out;
+}
+.video-carousel-nav:active {
+    transform: translateY(-50%) scale(0.92);
+}
+.video-carousel-nav:disabled {
+    opacity: 0;
+    pointer-events: none;
 }
 .video-carousel-nav.prev { left: 0; }
 .video-carousel-nav.next { right: 0; }
@@ -94,4 +116,28 @@
 @media (prefers-reduced-motion: reduce) {
     .video-card { transition: none; }
     .video-card:hover { transform: none; }
+    .video-carousel-track:not(.is-dragging) .video-card:active { transform: none; }
+}
+
+/* YouTube pop-up: grows out of the clicked card and shrinks back into it */
+#videoModal.fade {
+    /* Bootstrap waits for this before hiding, so it matches the dialog below */
+    transition: opacity 0.3s ease;
+}
+#videoModal.fade .modal-dialog {
+    transform: scale(var(--from-scale, 0.6));
+    transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease;
+}
+#videoModal.show .modal-dialog {
+    transform: none;
+    opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+    #videoModal.fade { transition: opacity 0.2s ease; }
+    #videoModal.fade .modal-dialog {
+        transform: none;
+        transition: opacity 0.2s ease;
+    }
 }
