@@ -125,12 +125,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p class="hs-eyebrow hero-tag">Vastgoedvideograaf en evenementenvideograaf</p>
               <h1 class="inter-700 display-4 hero-h1">Pieter Heidt</h1>
               <p class="hs-lead hero-p mb-4">Ik maak video's waardoor uw woning opvalt en uw evenement nog lang wordt herinnerd.</p>
-              <a class="hero-button inter-400 btn btn-primary primary-bubble-btn" href="../contact.html">Contactpagina</a>
+              <!-- De animatie draait op deze div, niet op de knop zelf:
+                   de knop heeft een CSS-transition op transform die GSAP in de war brengt -->
+              <div class="hero-button">
+                <a class="inter-400 btn btn-primary primary-bubble-btn" href="/contact.html">Kom in contact</a>
+              </div>
 
             </div>
             <div class="col-12 col-md-5 mt-2 hero-img">
-              <img title="Pieter Heidt in Rotterdam 2023" class="img-fluid hs-foto" src="images/Pieter_Heidt_downscale.webp" alt="profile picture"  />
-              <p class="inter-100"><i>Dit is een foto die ik heb gemaakt in Rotterdam augustus 2023</i></p>
+              <img title="Pieter Heidt in Rotterdam 2023" class="img-fluid hs-foto" src="images/Pieter.JPG" alt="profile picture"  />
             </div>
           </div>
         </section>
@@ -161,9 +164,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h3 class="inter-700 hs-card-title">Evenementen</h3>
                 <p class="hs-text">Herbeleef jouw evenement en deel de sfeer met iedereen die er niet bij was.</p>
                 <ul class="hs-list">
+                  <li>Korte reels voor Instagram en TikTok</li>
                   <li>Aftermovie van jouw evenement</li>
                   <li>Highlight video met de beste momenten</li>
-                  <li>Korte reels voor Instagram en TikTok</li>
                 </ul>
                 <div class="hs-actions">
                   <a class="btn btn-primary" href="contact.html">Offerte aanvragen</a>
