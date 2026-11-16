@@ -88,6 +88,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="/css/huisstijl.css" />
+    <script src="/javascript/intro.js"></script>
   </head>
   <body data-bs-theme="dark" id="body">
     <!-- Google Tag Manager (noscript) -->
@@ -115,7 +116,7 @@
         <h1 class="inter-700 hs-title">Een overzicht van mijn werk</h1>
       </div>
       <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="box col-12 col-md-6 col-lg-4">
           <article class="hs-card hs-card--hover h-100">
             <div class="hs-visual">
               <canvas width="500" id="canvas"></canvas>
@@ -127,7 +128,7 @@
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="box col-12 col-md-6 col-lg-4">
           <article class="hs-card hs-card--hover h-100">
             <div class="hs-visual">
               <canvas width="500" id="editing"></canvas>
@@ -139,7 +140,7 @@
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="box col-12 col-md-6 col-lg-4">
           <article class="hs-card hs-card--hover h-100">
             <div class="hs-visual">
               <img src="images/portfolio/Other.svg" alt="" />
@@ -184,11 +185,5 @@
 });
 
     </script>
-<script>
-  //footer fade//
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    gsap.from("#footer", { opacity: 0, duration: 0.6, delay: 0.2 });
-  }
-</script>
   </body>
 </html>

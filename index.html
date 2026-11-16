@@ -105,6 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
       <link rel="stylesheet" href="/css/huisstijl.css" />
+    <script src="/javascript/intro.js"></script>
   </head>
 
   <body data-bs-theme="dark" id="body">
@@ -133,7 +134,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             </div>
             <div class="col-12 col-md-5 mt-2 hero-img">
-              <img title="Pieter Heidt in Rotterdam 2023" class="img-fluid hs-foto" src="images/Pieter.JPG" alt="profile picture"  />
+              <!-- De kanteling draait op hs-portret, niet op hero-img: daar animeert GSAP de intro al -->
+              <div class="hs-portret">
+                <img title="Pieter Heidt in Rotterdam 2023" src="images/Pieter.JPG" alt="profile picture"  />
+              </div>
             </div>
           </div>
         </section>
@@ -144,7 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="inter-700 hs-title">Video op maat voor uw woning of evenement</h2>
           </div>
           <div class="row g-4">
-            <div class="col-12 col-md-6">
+            <div class="box col-12 col-md-6">
               <article class="hs-card hs-card--hover h-100">
                 <h3 class="inter-700 hs-card-title">Vastgoed</h3>
                 <p class="hs-text">Laat jouw woning opvallen tussen het aanbod en trek sneller de juiste koper aan.</p>
@@ -159,7 +163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
               </article>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="box col-12 col-md-6">
               <article class="hs-card hs-card--hover h-100">
                 <h3 class="inter-700 hs-card-title">Evenementen</h3>
                 <p class="hs-text">Herbeleef jouw evenement en deel de sfeer met iedereen die er niet bij was.</p>
@@ -194,7 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             4. titel + alt-tekst
           Meer items? Kopieer een hele <button class="video-card"> ... </button>.
         -->
-        <section class="container my-5 video-carousel" aria-label="Portfolio video's">
+        <section class="box container my-5 video-carousel" aria-label="Portfolio video's">
           <div class="video-carousel-track">
 
             <!-- item 1 -->
@@ -248,6 +252,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script src="/javascript/footer.js"></script>
      </footer>
      <script src="/javascript/Gsap/gsap.min.js"></script>
+     <script src="/javascript/Gsap/ScrollTrigger.min.js"></script>
+     <script src="/javascript/portret.js" defer></script>
      <script>
       let mm = gsap.matchMedia();
 
@@ -284,11 +290,5 @@ mm.add({
 });
 
      </script>
-<script>
-  //footer fade//
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    gsap.from("#footer", { opacity: 0, duration: 0.6, delay: 0.2 });
-  }
-</script>
   </body>
 </html>

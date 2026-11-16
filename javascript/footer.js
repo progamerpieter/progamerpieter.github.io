@@ -56,9 +56,28 @@ const SOCIALS = [
           .hover:hover {
             fill: #098951;
           }
+          .footer-links {
+            text-align: center;
+            margin: 1rem 0 0.75rem;
+          }
+          .footer-links .btn {
+            --bs-btn-color: rgba(255, 255, 255, 0.7);
+            --bs-btn-border-color: rgba(255, 255, 255, 0.2);
+            --bs-btn-hover-bg: rgba(255, 255, 255, 0.08);
+            --bs-btn-hover-border-color: rgba(255, 255, 255, 0.4);
+            --bs-btn-hover-color: #fff;
+            --bs-btn-active-bg: rgba(255, 255, 255, 0.12);
+            --bs-btn-active-border-color: rgba(255, 255, 255, 0.4);
+            --bs-btn-active-color: #fff;
+            font-size: 0.85rem;
+            padding: 0.35rem 1rem;
+          }
         </style>
         <div style="margin-top: 10px;" class="social">${links}
         </div>
+        <p class="footer-links">
+          <a class="btn btn-sm btn-outline-light" href="/algemene-voorwaarden.html">Algemene voorwaarden</a>
+        </p>
         <p style="text-align: center;">&copy; 2023 - ${year} Pieter Heidt</p>
       </div>`;
 

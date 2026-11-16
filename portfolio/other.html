@@ -59,6 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="msapplication-TileColor" content="#2b5797" />
     <meta name="theme-color" content="#05624a" />
       <link rel="stylesheet" href="/css/huisstijl.css" />
+    <script src="/javascript/intro.js"></script>
   </head>
   <body data-bs-theme="dark" id="body">
     <!-- Google Tag Manager (noscript) -->
@@ -78,30 +79,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1 class="hs-title">Overige projecten</h1>
         <p class="hs-lead">Creatieve projecten die niet in andere categorieën passen.</p>
       </div>
-      <article class="hs-card">
-        <h2 class="hs-card-title mt-0">3D</h2>
-        <p class="hs-text">Ik heb een paar 3D-modellen gemaakt.</p>
-        <div class="row g-4">
-          <div class="col-12 col-md-6">
-            <iframe class="hs-media" style="aspect-ratio: 5 / 4;" title="USB-stick (Xbox), Substance Painter" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6039e7781526426082cd06c78e209289/embed?autostart=1&ui_hint=2"></iframe>
+      <div class="box">
+        <article class="hs-card">
+          <h2 class="hs-card-title mt-0">3D</h2>
+          <p class="hs-text">Ik heb een paar 3D-modellen gemaakt.</p>
+          <div class="row g-4">
+            <div class="col-12 col-md-6">
+              <iframe class="hs-media" style="aspect-ratio: 5 / 4;" title="USB-stick (Xbox), Substance Painter" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/6039e7781526426082cd06c78e209289/embed?autostart=1&ui_hint=2"></iframe>
+            </div>
+            <div class="col-12 col-md-6">
+              <iframe class="hs-media" style="aspect-ratio: 5 / 4;" title="Windows 11" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/adacf6bd57764e0fb03ec94012ac4f8c/embed?autostart=1"></iframe>
+            </div>
           </div>
-          <div class="col-12 col-md-6">
-            <iframe class="hs-media" style="aspect-ratio: 5 / 4;" title="Windows 11" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/adacf6bd57764e0fb03ec94012ac4f8c/embed?autostart=1"></iframe>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </main>
     <!-- footer -->
     <footer>
       <script src="/javascript/footer.js"></script>
      </footer>
      <script src="/javascript/Gsap/gsap.min.js"></script>
-<script>
-  //footer fade//
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    gsap.from("#footer", { opacity: 0, duration: 0.6, delay: 0.2 });
-  }
-</script>
+     <script src="/javascript/Gsap/ScrollTrigger.min.js"></script>
   </body>
 </html>
  
