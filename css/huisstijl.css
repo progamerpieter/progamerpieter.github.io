@@ -268,6 +268,73 @@ a.hs-card:active {
   border-radius: var(--hs-radius);
 }
 
+/* Portretfoto (hero op index): liggende foto (4:3), ongelijke hoeken,
+   een groen kader dat er aan de bovenkant omheen loopt en een onderkant die wegloopt
+   in de pagina. javascript/portret.js laat hem meebewegen met de muis
+   door --hs-kantel-x/y en --hs-schuif-x/y aan te passen. */
+.hs-portret {
+  --hs-portret-sprong: 0.5rem;     /* hoe ver het kader uitsteekt */
+  --hs-portret-lijn: 2.5px;        /* dikte van het kader */
+  --hs-portret-hoeken: 5rem var(--hs-radius) var(--hs-radius) var(--hs-radius);
+  --hs-portret-vervaag: linear-gradient(to bottom, #000 62%, transparent 100%);
+  /* het kader is al weg waar de foto doorzichtig wordt, anders schijnt het erdoorheen */
+  --hs-portret-vervaag-kader: linear-gradient(to bottom, #000 25%, transparent 60%);
+  --hs-portret-vervaag-kader-rechts: linear-gradient(to bottom, #000 6%, transparent 19%);
+  --hs-kantel-x: 0deg;
+  --hs-kantel-y: 0deg;
+  --hs-schuif-x: 0px;
+  --hs-schuif-y: 0px;
+
+  position: relative;
+  max-width: 30rem;
+  margin-inline: auto;
+  padding: var(--hs-portret-sprong) var(--hs-portret-sprong) 0;
+  transform: perspective(900px) rotateX(var(--hs-kantel-x)) rotateY(var(--hs-kantel-y));
+}
+.hs-portret::before {
+  content: "";
+  position: absolute;
+  /* Lijn links, boven en rechts: hij buigt rechtsboven met een ronde hoek om
+     de foto heen. De hoeken zijn de hoeken van de foto plus de afstand,
+     zodat lijn en foto overal even ver van elkaar blijven. */
+  inset: 0 0 var(--hs-portret-sprong) 0;
+  border: var(--hs-portret-lijn) solid var(--hs-accent);
+  border-bottom: 0;
+  border-radius:
+    calc(5rem + var(--hs-portret-sprong))
+    calc(var(--hs-radius) + var(--hs-portret-sprong))
+    0 0;
+  transform: translate(var(--hs-schuif-x), var(--hs-schuif-y));
+  /* links loopt de lijn ver door, rechts stopt hij eerder */
+  -webkit-mask-image: var(--hs-portret-vervaag-kader), var(--hs-portret-vervaag-kader-rechts);
+  mask-image: var(--hs-portret-vervaag-kader), var(--hs-portret-vervaag-kader-rechts);
+  -webkit-mask-size: 50% 100%;
+  mask-size: 50% 100%;
+  -webkit-mask-position: left top, right top;
+  mask-position: left top, right top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+}
+.hs-portret img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;           /* zelfde verhouding als de foto zelf */
+  object-fit: cover;
+  object-position: 50% 50%;      /* verschuif dit als een andere foto wordt afgesneden */
+  border-radius: var(--hs-portret-hoeken);
+  -webkit-mask-image: var(--hs-portret-vervaag);
+  mask-image: var(--hs-portret-vervaag);
+}
+@media (hover: hover) and (pointer: fine) {
+  .hs-portret,
+  .hs-portret::before {
+    will-change: transform;
+  }
+}
+
 /* ---------- 7. Formulieren ---------- */
 .hs-form .form-label {
   font-size: 0.9rem;
@@ -307,6 +374,104 @@ a.hs-card:active {
   color: var(--hs-tekst);
 }
 
+/* Artikelen (algemene-voorwaarden.html): genummerde leden in stille kleur */
+.hs-artikel {
+  counter-reset: lid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--hs-tekst-zacht);
+  line-height: 1.65;
+}
+.hs-artikel li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 2.25rem;
+  border-top: 1px solid var(--hs-rand);
+}
+.hs-artikel li::before {
+  counter-increment: lid;
+  content: counter(lid);
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--hs-tekst-stil);
+}
+.hs-artikel li ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0;
+}
+.hs-artikel li ul li {
+  padding: 0.25rem 0 0.25rem 1rem;
+  border: 0;
+}
+.hs-artikel li ul li::before {
+  content: "\2013";
+  counter-increment: none;
+  top: 0.25rem;
+  width: auto;
+}
+/* Definities: begrip vet, uitleg erachter */
+.hs-artikel--definities li {
+  padding-left: 0;
+}
+.hs-artikel--definities li::before {
+  content: none;
+}
+.hs-artikel--definities strong {
+  color: var(--hs-tekst);
+  font-weight: 600;
+}
+/* Inhoudsopgave die meescrolt (naast lange tekst) */
+.hs-sticky {
+  position: sticky;
+  top: 6rem;
+}
+/* Ruimte boven een artikel waar je naartoe springt (de navbar staat ervoor) */
+.hs-anker {
+  scroll-margin-top: 6rem;
+}
+.hs-toc {
+  counter-reset: toc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hs-toc li {
+  border-top: 1px solid var(--hs-rand);
+}
+/* Nummer voor elk item, gelijk aan het artikelnummer */
+.hs-toc a {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  color: var(--hs-tekst-zacht);
+  text-decoration: none;
+  transition: color var(--hs-snel) var(--hs-ease), padding-left var(--hs-snel) var(--hs-ease);
+}
+.hs-toc a::before {
+  counter-increment: toc;
+  content: counter(toc);
+  flex: none;
+  width: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--hs-tekst-stil);
+}
+.hs-toc a:hover::before {
+  color: var(--hs-accent);
+}
+.hs-toc a:hover {
+  color: #fff;
+  padding-left: 0.4rem;
+}
+
 /* ---------- 9. Toegankelijkheid ---------- */
 @media (prefers-reduced-motion: reduce) {
   .hs-card,
@@ -331,4 +496,32 @@ a.hs-card:active {
   .hs-card {
     background: #111;
   }
+}
+
+/* ---------- 10. Intro-animatie (javascript/intro.js) ----------
+   intro.js zet de klasse "hs-intro" op <html>. Alleen dán beginnen de kop,
+   de boxes en de footer verborgen; GSAP brengt ze daarna in beeld.
+   Zonder het script, of met "minder beweging" aan, zie je gewoon alles.
+   De kop staat iets lager naarmate de regel lager staat (zoals de hero op index):
+   zo wijst de beweging alvast de kant op waar de tekst naartoe gaat. */
+html.hs-intro .hs-back,
+html.hs-intro .hs-head > *,
+html.hs-intro .box,
+html.hs-intro #footer {
+  opacity: 0;
+}
+html.hs-intro .hs-back {
+  transform: translateY(30px);
+}
+html.hs-intro .hs-head > :nth-child(1) {
+  transform: translateY(40px);
+}
+html.hs-intro .hs-head > :nth-child(2) {
+  transform: translateY(50px);
+}
+html.hs-intro .hs-head > :nth-child(n + 3) {
+  transform: translateY(60px);
+}
+html.hs-intro .box {
+  transform: translateY(50px);
 }

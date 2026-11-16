@@ -59,6 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video editing | Progamerpieter</title>
       <link rel="stylesheet" href="/css/huisstijl.css" />
+    <script src="/javascript/intro.js"></script>
   </head>
   <body data-bs-theme="dark" id="body">
     <!-- Google Tag Manager (noscript) -->
@@ -78,27 +79,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="hs-lead">Van schoolprojecten tot persoonlijke edits.</p>
       </div>
       <div class="hs-stack">
-          <article class="hs-card">
-            <h2 class="hs-card-title mt-0">Turfy gang - Padellen (muziekvideo)</h2>
-            <p class="hs-text">Ik heb deze videoclip gefilmd met een paar studiegenoten en zelf geëdit.</p>
-            <iframe class="video-embed" style="aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/lGq78Ilappw?si=a0xE5OLh-xMcNqBe" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <div class="hs-actions">
-              <a class="btn btn-primary" href="/portfolio/projecten/padellen.html">Bekijk project</a>
-            </div>
-          </article>
-          <article class="hs-card">
-            <h2 class="hs-card-title mt-0">Color grade workshop</h2>
-            <p class="hs-text">Van school kreeg ik een color grading workshop. Ik moest zelf eerst de beelden schieten en daarna kon ik beginnen met color graden. De bedoeling was dat de video in de 80s style werd gemaakt.</p>
-            <iframe class="video-embed" style="max-width: 560px; aspect-ratio: 560 / 500;" src="https://www.youtube.com/embed/0T-eatF-EUA?si=04dkF-z0SkT6vZZ8" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <div class="hs-actions">
-              <a class="btn btn-primary" href="/portfolio/projecten/color_grade_workshop.html">Bekijk project</a>
-            </div>
-          </article>
-          <article class="hs-card">
-            <h2 class="hs-card-title mt-0">TMS X Shade 2023 editing contest</h2>
-            <p class="hs-text">Ik deed mee aan een video editing wedstrijd. Voor deze wedstrijd kregen we beelden en moesten we er een advertentie van maken voor de Apple Watch.</p>
-            <iframe class="video-embed" style="aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/648llWSWKdA?si=XGVLoIUhSmzJOfK1" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </article>
+          <div class="box">
+            <article class="hs-card">
+              <h2 class="hs-card-title mt-0">Turfy gang - Padellen (muziekvideo)</h2>
+              <p class="hs-text">Ik heb deze videoclip gefilmd met een paar studiegenoten en zelf geëdit.</p>
+              <iframe class="video-embed" style="aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/lGq78Ilappw?si=a0xE5OLh-xMcNqBe" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="hs-actions">
+                <a class="btn btn-primary" href="/portfolio/projecten/padellen.html">Bekijk project</a>
+              </div>
+            </article>
+          </div>
+          <div class="box">
+            <article class="hs-card">
+              <h2 class="hs-card-title mt-0">Color grade workshop</h2>
+              <p class="hs-text">Van school kreeg ik een color grading workshop. Ik moest zelf eerst de beelden schieten en daarna kon ik beginnen met color graden. De bedoeling was dat de video in de 80s style werd gemaakt.</p>
+              <iframe class="video-embed" style="max-width: 560px; aspect-ratio: 560 / 500;" src="https://www.youtube.com/embed/0T-eatF-EUA?si=04dkF-z0SkT6vZZ8" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="hs-actions">
+                <a class="btn btn-primary" href="/portfolio/projecten/color_grade_workshop.html">Bekijk project</a>
+              </div>
+            </article>
+          </div>
+          <div class="box">
+            <article class="hs-card">
+              <h2 class="hs-card-title mt-0">TMS X Shade 2023 editing contest</h2>
+              <p class="hs-text">Ik deed mee aan een video editing wedstrijd. Voor deze wedstrijd kregen we beelden en moesten we er een advertentie van maken voor de Apple Watch.</p>
+              <iframe class="video-embed" style="aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/648llWSWKdA?si=XGVLoIUhSmzJOfK1" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </article>
+          </div>
       </div>
     </main>
     <!-- footer -->
@@ -106,11 +113,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script src="/javascript/footer.js"></script>
      </footer>
      <script src="/javascript/Gsap/gsap.min.js"></script>
-<script>
-  //footer fade//
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    gsap.from("#footer", { opacity: 0, duration: 0.6, delay: 0.2 });
-  }
-</script>
+     <script src="/javascript/Gsap/ScrollTrigger.min.js"></script>
   </body>
 </html>

@@ -74,11 +74,59 @@ Gebruik `hs-head hs-head--links` om de kop links uit te lijnen (subpagina's).
 ### Video
 `<iframe class="video-embed" style="aspect-ratio: 16 / 9;" ...>`
 
+### Portretfoto
+Liggende foto (4:3) met ongelijke hoeken, een groen kader dat er aan de bovenkant omheen loopt en een onderkant die wegloopt in de pagina. Werkt het best met een foto met donkere achtergrond.
+
+```html
+<div class="hs-portret">
+  <img src="images/Pieter.JPG" alt="..." />
+</div>
+<script src="/javascript/portret.js" defer></script>
+```
+
+- [javascript/portret.js](javascript/portret.js) laat de foto meebewegen met de muis. Zonder dat script staat hij gewoon stil.
+- Staat het gezicht niet goed in beeld? Pas `object-position` aan bij `.hs-portret img`.
+
 ### Formulier
 Zet `hs-form` op het formulier en gebruik altijd een `<label class="form-label">` boven elk veld.
 
 ### Lopende tekst
 Projectpagina's: zet de tekst in `<div class="hs-prose">` met `<h2>` per onderdeel.
+
+### Artikelen (algemene voorwaarden)
+Elk artikel is een `hs-card` met een klein label, titel en een genummerde lijst:
+
+```html
+<article class="hs-card hs-anker" id="artikel-2">
+  <p class="hs-eyebrow">Artikel 2</p>
+  <h2 class="hs-card-title mt-0">Toepasselijkheid</h2>
+  <ol class="hs-artikel">
+    <li>Eerste lid.</li>
+    <li>Tweede lid.</li>
+  </ol>
+</article>
+```
+
+- `hs-artikel--definities` voor de definities: begrip vet (`<strong>`), geen nummers.
+- `hs-anker` zorgt dat een artikel niet onder de navbar verdwijnt als je ernaartoe springt.
+- Inhoudsopgave ernaast: `<nav class="hs-card hs-sticky">` met `<ol class="hs-toc">`.
+
+### Intro-animatie
+Elke pagina laadt [javascript/intro.js](javascript/intro.js) in de `<head>`, direct na huisstijl.css, en GSAP + ScrollTrigger onderaan de pagina:
+
+```html
+<link rel="stylesheet" href="/css/huisstijl.css" />
+<script src="/javascript/intro.js"></script>
+...
+<script src="/javascript/Gsap/gsap.min.js"></script>
+<script src="/javascript/Gsap/ScrollTrigger.min.js"></script>
+```
+
+- De sectiekop (`hs-back`, `hs-eyebrow`, `hs-title`, `hs-lead`) komt vanzelf regel voor regel binnen.
+- Zet `box` op alles wat als kaart moet binnenkomen (dezelfde animatie als op socials.html). Op de **kolom** of op een `<div class="box">` om de kaart heen, niet op `hs-card` zelf.
+- Boxes die al in beeld staan komen direct; de rest zodra je ernaar scrolt. De footer verschijnt na de laatste box.
+- Bij "minder beweging" (prefers-reduced-motion) staat alles direct in beeld.
+- socials.html heeft zijn eigen versie van deze animatie en gebruikt intro.js niet.
 
 ## Standaard pagina-opbouw
 
